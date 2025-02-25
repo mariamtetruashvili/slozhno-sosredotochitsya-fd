@@ -1,5 +1,527 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  inline-size: 375px;
+  font-family: var(--font-family);
+  margin: 0 auto;
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+}
+
+.header__rec {
+  position: absolute;
+  z-index: -1;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  inset-inline-end: 20px;
+  inset-block-start: 10px;
+}
+
+.header__rec::before {
+  content: "REC";
+  color: var(--shadow-color);
+  line-height: 24px;
+}
+.header__rec::after {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 2px var(--shadow-color);
+  background: var(--shadow-color);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  border-inline-end: 1px solid var(--shadow-color);
+  border-block-start: 1px solid var(--shadow-color);
+  inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 10px);
+  inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 10px);
+}
+
+.decorated-zone::after {
+  border-inline-start: 1px solid var(--shadow-color);
+  border-block-end: 1px solid var(--shadow-color);
+  inset-inline-start: clamp(10px, 0.0286rem + 2.5445vw, 10px);
+  inset-block-end: clamp(10px, 0.0286rem + 2.5445vw, 10px);
+}
+
+.header__theme-menu {
+  display: flex;
+  justify-content: center;
+  padding-top: 58px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 282px;
+  gap: 10px;
+  list-style: none;
+}
+
+.header__theme-menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__theme-menu-button {
+  text-align: center;
+  padding: 4px 12px;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  text-transform: lowercase;
+  color: var(--shadow-color);
+  background-color: transparent;
+  border: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--hover-border-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--shadow-color);
+}
+
+.header__theme-menu-button_type_auto {
+  pointer-events: none;
+}
+
+.header__theme-menu-button_type_dark {
+  outline: 1px solid var(--shadow-color);
+}
+
+.header__title {
+  margin-block-start: 59px;
+  margin-block-end: 47px;
+  padding-left: 8px;
+  font-size: var(--font-size-mobile);
+  text-shadow: 4px 4px 0 var(--shadow-color);
+  color: var(--text-color);
+  line-height: var(--line-height-large);
+  font-weight: var(--font-weight-bold);
+}
+
+.header__subtitle {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  inline-size: 355px;
+  block-size: 117px;
+  margin-block-start: 0;
+  flex-direction: column;
+}
+
+.header__subtitle p {
+  margin: 0;
+}
+
+.title-decor {
+  background-color: var(--shadow-color);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-medium);
+  font-size: var(--font-size-small);
+  color: var(--section-subtitle);
+}
+
+.title-main.title-decor:nth-last-of-type(-n + 5) {
+  font-weight: var(--font-weight-regular);
+}
+
+section:first-of-type {
+  margin-block-start: 41px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.section-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  inline-size: 375px;
+}
+
+.section-title {
+  margin: 0;
+  margin-inline-start: 10px;
+  margin-inline-end: 10px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-medium);
+  color: var(--shadow-color);
+}
+
+.section-subtitles {
+  margin: 0;
+  padding: 0;
+  inline-size: 364px;
+}
+
+.title {
+  margin-block-start: 17px;
+  margin-inline-start: 10px;
+  margin-block-end: 8px;
+}
+
+.section-text {
+  margin: 0;
+  margin-inline-start: 10px;
+  color: var(--section-text);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-medium);
+  font-size: var(--font-size-small);
+}
+
+.section-intro li:nth-of-type(2) h3 {
+  margin-block-start: 21px;
+}
+
+.section-focus {
+  margin-block-start: 52px;
+}
+
+.title-focus {
+  margin: 8px;
+  margin-block-start: 21px;
+  margin-inline-start: 10px;
+  margin-inline-end: 0px;
+}
+
+.section-productivity {
+  margin-block-start: 54px;
+}
+
+.title-main {
+  margin: 7px;
+  margin-block-start: 23px;
+  margin-inline-start: 10px;
+  margin-inline-end: 0px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--section-text);
+  text-shadow: 2px 1px 0 var(--shadow-color);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus {
+  outline: 2px solid var(--section-text);
+}
+
+.section-gallery {
+  inline-size: 355px;
+  margin-inline-start: 10px;
+}
+
+.gallery-title {
+  margin-block-start: 47px;
+  background-color: var(--shadow-color);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-medium);
+  font-size: var(--font-size-small);
+  color: var(--section-subtitle);
+}
+
+.gallery-element {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0;
+  gap: 10px;
+}
+
+.gallery-element__item-img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.footer {
+  margin-block-start: 40px;
+  inline-size: 375px;
+  block-size: 668px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__title {
+  padding-top: 17px;
+  padding-left: 5px;
+  font-size: var(--font-size-mobile);
+  text-shadow: 4px 4px 0 var(--shadow-color);
+  color: var(--text-color);
+  line-height: var(--line-height-large);
+  font-weight: var(--font-weight-bold);
+}
+
+@media (width >= 768px) {
+  .page {
+    inline-size: 768px;
+  }
+
+  .header {
+    grid-template-rows: 2fr 1fr 2fr;
+  }
+
+  .header__rec {
+    margin-block-start: 10px;
+    margin-inline-end: 10px;
+  }
+
+  .decorated-zone:before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 25px;
+    left: 20px;
+  }
+  .header__theme-menu {
+    margin-block-start: 10px;
+    margin-inline-start: 380px;
+  }
+
+  .header__title {
+    margin-block-end: 51px;
+    font-size: var(--font-size-desktop);
+  }
+
+  .header__subtitle {
+    inline-size: 364px;
+    margin-block-start: 107px;
+    margin-inline-start: 364px;
+  }
+
+  section:first-of-type {
+    margin-block-start: 54px;
+  }
+  .section-intro {
+    display: flex;
+    inline-size: 768px;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .section-title {
+    margin: 0;
+    inline-size: 236px;
+  }
+
+  .section-subtitles {
+    inline-size: 472px;
+  }
+
+  .title {
+    margin: 0;
+  }
+
+  .section-text {
+    margin-inline-start: 0px;
+    margin-block-start: 10px;
+  }
+
+  .section-intro li:nth-of-type(2) h3 {
+    margin-block-start: 23px;
+  }
+
+  .section-focus {
+    margin-block-start: 81px;
+    inline-size: 728px;
+    margin-inline: auto;
+  }
+
+  .section-focus .section-subtitles {
+    inline-size: 728px;
+    margin-block-start: 16px;
+  }
+  .section-focus .section-text {
+    inline-size: 728px;
+  }
+  .section-focus .title-focus {
+    inline-size: 728px;
+    margin-inline-start: 0px;
+  }
+
+  .section-productivity {
+    display: flex;
+    margin-block-start: 81px;
+    inline-size: 728px;
+    margin-inline: auto;
+    gap: 27px;
+  }
+
+  .section-productivity .title-main {
+    margin-block-start: 20px;
+    margin-inline-start: 0px;
+  }
+
+  .section-gallery {
+    margin-block-start: 80px;
+    inline-size: 728px;
+    margin-inline: auto;
+  }
+
+  .gallery-element {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "img1 img1 img2"
+      "img3 img4 img2"
+      "img3 img5 img5";
+    gap: 22px;
+  }
+  .gallery-element__item:nth-child(1) {
+    grid-area: img1;
+  }
+  .gallery-element__item:nth-child(2) {
+    grid-area: img2;
+  }
+  .gallery-element__item:nth-child(3) {
+    grid-area: img3;
+  }
+  .gallery-element__item:nth-child(4) {
+    grid-area: img4;
+  }
+  .gallery-element__item:nth-child(5) {
+    grid-area: img5;
+  }
+
+  .footer {
+    inline-size: 768px;
+    block-size: 1024px;
+    margin-block-start: 59px;
+  }
+  .footer__title {
+    font-size: var(--font-size-desktop);
+  }
+}
+
+@media (width >= 1024px) {
+  .page {
+    inline-size: 1024px;
+  }
+
+  .header {
+    grid-template-rows: 1fr 1fr min-content;
+  }
+  .header__theme-menu {
+    align-self: start;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+
+    padding: 0;
+  }
+
+  .header__title {
+    margin: 0;
+    margin-block-start: 126px;
+  }
+
+  .header__subtitle {
+    inline-size: 491px;
+    block-size: 71px;
+    margin-block-start: 120px;
+    margin-inline-start: 494px;
+    margin-block-end: 134px;
+  }
+
+  .section:first-of-type {
+    margin-block-start: 59px;
+  }
+
+  .section-intro {
+    inline-size: 984px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    inline-size: 314px;
+  }
+
+  .section-subtitles {
+    inline-size: 648px;
+  }
+  .section-text {
+    inline-size: 648px;
+  }
+  .section-focus {
+    inline-size: 984px;
+    margin-block-start: 79px;
+  }
+
+  .section-focus .section-subtitles {
+    inline-size: 984px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .section-focus .title {
+    margin-block-start: 3px;
+    inline-size: 315px;
+  }
+
+  .section-focus .title-focus {
+    margin-block-start: 3px;
+    inline-size: 315px;
+  }
+
+  .section-focus .section-text {
+    inline-size: 315px;
+  }
+
+  .section-productivity {
+    margin-block-start: 80px;
+    inline-size: 984px;
+  }
+
+  .section-gallery {
+    margin-block-start: 79px;
+    inline-size: 984px;
+  }
+
+  .footer {
+    inline-size: 1024px;
+    block-size: 768px;
+  }
 }
