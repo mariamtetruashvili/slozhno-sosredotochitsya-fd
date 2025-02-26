@@ -249,7 +249,7 @@ ul {
 }
 
 .gallery-title {
-  margin-block-start: 47px;
+  margin-block-start: 45px;
   background-color: var(--shadow-color);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-medium);
@@ -412,7 +412,7 @@ ul {
   }
 
   .section-gallery {
-    margin-block-start: 76px;
+    margin-block-start: 73px;
     inline-size: 728px;
     margin-inline: auto;
   }
@@ -535,7 +535,7 @@ ul {
     inline-size: 649px;
   }
   .section-gallery {
-    margin-block-start: 76px;
+    margin-block-start: 75px;
     inline-size: 984px;
   }
 
