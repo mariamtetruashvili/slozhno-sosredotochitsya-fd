@@ -5,6 +5,7 @@
 */
 
 :root.theme-light {
+  --bg-color: #fff1f7;
   --shadow-color: #ff8dcb;
   --text-color: #ffc2e6;
   --section-subtitle: #353430;
@@ -17,45 +18,38 @@
   */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --shadow-color: #ff8dcb;
-    --text-color: #ffc2e6;
-    --section-subtitle: #353430;
-    --section-text: #353430;
-    --hover-border-color: #32312d66;
-    --bg-image: url("../images/cover-image-light.png");
-    /* Дублируем переменные светлой темы */
-  }
+.theme-light .header__rec {
+  display: none;
+}
 
-  .theme-light .header__rec {
-    display: none;
-  }
+.theme-light .decorated-zone::before {
+  border-inline-end: 1px solid var(--section-text);
+  border-block-start: 1px solid var(--section-text);
+}
+.theme-light .decorated-zone::after {
+  border-inline-start: 1px solid var(--section-text);
+  border-block-end: 1px solid var(--section-text);
+}
+.theme-light .header__theme-menu-button {
+  color: var(--section-text);
+}
 
-  .theme-light .decorated-zone::before {
-    border-inline-end: 1px solid var(--section-text);
-    border-block-start: 1px solid var(--section-text);
-  }
-  .theme-light .decorated-zone::after {
-    border-inline-start: 1px solid var(--section-text);
-    border-block-end: 1px solid var(--section-text);
-  }
-  .theme-light .header__theme-menu-button {
-    color: var(--section-text);
-  }
+.theme-light .header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--section-subtitle);
+}
 
-  .theme-light .header__theme-menu-button:focus-visible {
-    outline: none;
-    border-bottom: 1px solid var(--section-subtitle);
-  }
+.theme-light .header__theme-menu-button_type_dark {
+  outline: none;
+}
 
-  .theme-light .header__theme-menu-button_type_dark {
-    outline: none;
-  }
-  .theme-light .header__theme-menu-button_type_light {
-    border: 1px solid var(--section-subtitle);
-  }
-  .theme-light .section-title {
-    color: var(--section-subtitle);
-  }
+.theme-light .header__theme-menu-button_type_dark:hover {
+  outline: 1px solid var(--hover-border-color);
+}
+
+.theme-light .header__theme-menu-button_type_light {
+  border: 1px solid var(--section-subtitle);
+}
+.theme-light .section-title {
+  color: var(--section-subtitle);
 }

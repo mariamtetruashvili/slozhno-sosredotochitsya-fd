@@ -5,6 +5,7 @@
 */
 
 :root.theme-dark {
+  --bg-color: #000028;
   --shadow-color: #ff0070;
   --text-color: #db00ff;
   --section-subtitle: #000028;

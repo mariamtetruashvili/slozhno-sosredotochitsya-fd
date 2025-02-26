@@ -1,5 +1,6 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+/* * 
+{ outline: 1px solid red; }*/
 .page {
   inline-size: 375px;
   font-family: var(--font-family);
@@ -8,12 +9,14 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  background-color: var(--bg-color);
 }
 /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 
 .header {
+  height: 100vh;
+  min-height: 668px;
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-rows: 1fr min-content 1fr;
 }
 
@@ -36,7 +39,7 @@
   content: "";
   display: inline-block;
   border-radius: 50%;
-  box-shadow: 0 0 2px 2px var(--shadow-color);
+  box-shadow: 0 0 4px 2px var(--shadow-color);
   background: var(--shadow-color);
   inline-size: 9px;
   block-size: 9px;
@@ -72,7 +75,7 @@
 .header__theme-menu {
   display: flex;
   justify-content: center;
-  padding-top: 58px;
+  padding-top: 59px;
 }
 
 .header__theme-menu-list {
@@ -112,17 +115,13 @@
   border-bottom: 1px solid var(--shadow-color);
 }
 
-.header__theme-menu-button_type_auto {
-  pointer-events: none;
-}
-
 .header__theme-menu-button_type_dark {
   outline: 1px solid var(--shadow-color);
 }
 
 .header__title {
-  margin-block-start: 59px;
-  margin-block-end: 47px;
+  margin-block-start: 52px;
+  margin-block-end: 52px;
   padding-left: 8px;
   font-size: var(--font-size-mobile);
   text-shadow: 4px 4px 0 var(--shadow-color);
@@ -130,15 +129,10 @@
   line-height: var(--line-height-large);
   font-weight: var(--font-weight-bold);
 }
-
 .header__subtitle {
-  display: flex;
-  justify-content: center;
+  align-self: flex-start;
   justify-self: center;
   inline-size: 355px;
-  block-size: 117px;
-  margin-block-start: 0;
-  flex-direction: column;
 }
 
 .header__subtitle p {
@@ -188,7 +182,7 @@ ul {
 }
 
 .title {
-  margin-block-start: 17px;
+  margin-block-start: 19px;
   margin-inline-start: 10px;
   margin-block-end: 8px;
 }
@@ -212,7 +206,7 @@ ul {
 
 .title-focus {
   margin: 8px;
-  margin-block-start: 21px;
+  margin-block-start: 23px;
   margin-inline-start: 10px;
   margin-inline-end: 0px;
 }
@@ -221,9 +215,16 @@ ul {
   margin-block-start: 54px;
 }
 
+.section-productivity .title {
+  margin-block-start: 19px;
+  margin-inline-start: 10px;
+  margin-inline-end: 10px;
+  margin-block-end: 8px;
+}
+
 .title-main {
   margin: 7px;
-  margin-block-start: 23px;
+  margin-block-start: 22px;
   margin-inline-start: 10px;
   margin-inline-end: 0px;
 }
@@ -274,15 +275,14 @@ ul {
 .footer {
   margin-block-start: 40px;
   inline-size: 375px;
-  block-size: 668px;
+  height: 100vh;
+  min-height: 668px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .footer__title {
-  padding-top: 17px;
-  padding-left: 5px;
   font-size: var(--font-size-mobile);
   text-shadow: 4px 4px 0 var(--shadow-color);
   color: var(--text-color);
@@ -330,7 +330,7 @@ ul {
   }
 
   section:first-of-type {
-    margin-block-start: 54px;
+    margin-block-start: 60px;
   }
   .section-intro {
     display: flex;
@@ -358,7 +358,7 @@ ul {
   }
 
   .section-intro li:nth-of-type(2) h3 {
-    margin-block-start: 23px;
+    margin-block-start: 20px;
   }
 
   .section-focus {
@@ -369,7 +369,7 @@ ul {
 
   .section-focus .section-subtitles {
     inline-size: 728px;
-    margin-block-start: 16px;
+    margin-block-start: 18px;
   }
   .section-focus .section-text {
     inline-size: 728px;
@@ -380,20 +380,39 @@ ul {
   }
 
   .section-productivity {
-    display: flex;
-    margin-block-start: 81px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin-block-start: 75px;
     inline-size: 728px;
     margin-inline: auto;
-    gap: 27px;
+    gap: 3px;
+  }
+
+  .section-productivity .section-title {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+
+  .section-productivity .title {
+    margin: 0;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin-block-end: 71px;
+  }
+
+  .section-productivity .section-subtitles {
+    margin-block-start: 21px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
   }
 
   .section-productivity .title-main {
-    margin-block-start: 20px;
+    inline-size: 472px;
     margin-inline-start: 0px;
   }
 
   .section-gallery {
-    margin-block-start: 80px;
+    margin-block-start: 76px;
     inline-size: 728px;
     margin-inline: auto;
   }
@@ -424,7 +443,7 @@ ul {
 
   .footer {
     inline-size: 768px;
-    block-size: 1024px;
+    min-height: 1024px;
     margin-block-start: 59px;
   }
   .footer__title {
@@ -448,18 +467,16 @@ ul {
 
   .header__theme-menu-list {
     flex-direction: row;
-
     padding: 0;
   }
 
   .header__title {
     margin: 0;
-    margin-block-start: 126px;
+    margin-block-start: 114px;
   }
 
   .header__subtitle {
     inline-size: 491px;
-    block-size: 71px;
     margin-block-start: 120px;
     margin-inline-start: 494px;
     margin-block-end: 134px;
@@ -514,14 +531,16 @@ ul {
     margin-block-start: 80px;
     inline-size: 984px;
   }
-
+  .section-productivity .title-main {
+    inline-size: 649px;
+  }
   .section-gallery {
-    margin-block-start: 79px;
+    margin-block-start: 76px;
     inline-size: 984px;
   }
 
   .footer {
     inline-size: 1024px;
-    block-size: 768px;
+    min-height: 768px;
   }
 }
