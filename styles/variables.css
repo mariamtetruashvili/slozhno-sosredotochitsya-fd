@@ -4,9 +4,17 @@
 */
 :root {
   --bg-color: #000028;
+  --REC-color: #ff0070;
+  --decorated-color: #ff0070;
+  --menu-color: #ff0070;
+  --nofocus-color: #db00ff;
   --shadow-color: #ff0070;
-  --text-color: #db00ff;
-  --section-subtitle: #000028;
+  --header-subtitle: #000028;
+  --title-decor-color: #ff0070;
+  --section-title-color: #ff0070;
+  --section-text-color: #f1b2ce;
+  --hover-border-color: #ff007066;
+  --rec-decor-visibility: visible;
   --font-family: "IBM Plex Mono", monospace;
   --line-height-small: 18px;
   --line-height-medium: 23.4px;
@@ -17,6 +25,4 @@
   --font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --font-size-desktop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --bg-image: url("../images/cover-image-dark.png");
-  --section-text: #f1b2ce;
-  --hover-border-color: #ff007066;
 }

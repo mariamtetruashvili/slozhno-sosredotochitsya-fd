@@ -6,50 +6,54 @@
 
 :root.theme-light {
   --bg-color: #fff1f7;
+  --decorated-color: #353430;
+  --menu-color: #353430;
+  --nofocus-color: #ffc2e6;
   --shadow-color: #ff8dcb;
-  --text-color: #ffc2e6;
-  --section-subtitle: #353430;
-  --section-text: #353430;
+  --header-subtitle: #353430;
+  --title-decor-color: #ff8dcb;
+  --section-title-color: #353430;
+  --section-text-color: #353430;
   --hover-border-color: #32312d66;
+  --font-family: "IBM Plex Mono", monospace;
+  --line-height-small: 18px;
+  --line-height-medium: 23.4px;
+  --line-height-large: 95.7px;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-size-small: 18px;
+  --font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --font-size-desktop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --bg-image: url("../images/cover-image-light.png");
+  --rec-decor-visibility: hidden;
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
 }
 
-.theme-light .header__rec {
-  display: none;
-}
-
-.theme-light .decorated-zone::before {
-  border-inline-end: 1px solid var(--section-text);
-  border-block-start: 1px solid var(--section-text);
-}
-.theme-light .decorated-zone::after {
-  border-inline-start: 1px solid var(--section-text);
-  border-block-end: 1px solid var(--section-text);
-}
-.theme-light .header__theme-menu-button {
-  color: var(--section-text);
-}
-
-.theme-light .header__theme-menu-button:focus-visible {
-  outline: none;
-  border-bottom: 1px solid var(--section-subtitle);
-}
-
-.theme-light .header__theme-menu-button_type_dark {
-  outline: none;
-}
-
-.theme-light .header__theme-menu-button_type_dark:hover {
-  outline: 1px solid var(--hover-border-color);
-}
-
-.theme-light .header__theme-menu-button_type_light {
-  border: 1px solid var(--section-subtitle);
-}
-.theme-light .section-title {
-  color: var(--section-subtitle);
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #fff1f7;
+    --decorated-color: #353430;
+    --menu-color: #353430;
+    --nofocus-color: #ffc2e6;
+    --shadow-color: #ff8dcb;
+    --header-subtitle: #353430;
+    --title-decor-color: #ff8dcb;
+    --section-title-color: #353430;
+    --section-text-color: #353430;
+    --hover-border-color: #32312d66;
+    --font-family: "IBM Plex Mono", monospace;
+    --line-height-small: 18px;
+    --line-height-medium: 23.4px;
+    --line-height-large: 95.7px;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --font-size-small: 18px;
+    --font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    --font-size-desktop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --bg-image: url("../images/cover-image-light.png");
+    --rec-decor-visibility: hidden;
+  }
 }
